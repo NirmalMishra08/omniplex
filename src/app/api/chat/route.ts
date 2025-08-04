@@ -1,13 +1,14 @@
 import OpenAI from "openai";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+
 
 export const runtime = "edge";
 
 export async function POST(req: Request) {
+  const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
   const {
     messages,
     model,
