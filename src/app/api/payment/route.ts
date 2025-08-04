@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
 
-console.log("Payment API route initialized",process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY!);
-const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY!, {
+console.log("Payment API route initialized",process.env.STRIPE_SECRET_KEY!);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: '2025-07-30.basil',
 });
 export async function POST(req: NextRequest) {
